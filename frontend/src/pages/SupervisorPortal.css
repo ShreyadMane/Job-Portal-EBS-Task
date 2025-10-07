@@ -1,0 +1,211 @@
+.supervisor-portal {
+    background: linear-gradient(135deg, #e6f0ff 0%, #f0f8ff 100%);
+    min-height: 100vh;
+}
+
+.supervisor-header {
+    background: linear-gradient(135deg, var(--secondary-color), var(--secondary-dark));
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow-lg);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.supervisor-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.supervisor-header h1::before {
+    content: '👨‍💼';
+    font-size: 32px;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-actions span {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.supervisor-content {
+    display: flex;
+    padding: 30px;
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Section Cards */
+.profile-section, .job-section {
+    background: white;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    padding: 30px;
+    flex: 1;
+    transition: var(--transition);
+}
+
+.profile-section:hover, .job-section:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.section-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+    color: var(--text-color);
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-dark));
+}
+
+/* Profile Styles */
+.profile-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+}
+
+.profile-avatar:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-lg);
+}
+
+.profile-avatar i {
+    font-size: 50px;
+    color: #aaa;
+}
+
+.camera-icon {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
+}
+
+.camera-icon:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-md);
+}
+
+.profile-info {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-name {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text-color);
+}
+
+.profile-role {
+    color: var(--text-light);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 6px 12px;
+    background: rgba(106, 90, 205, 0.1);
+    border-radius: 20px;
+    display: inline-block;
+}
+
+/* Job Form Styles */
+.job-form {
+    margin-bottom: 25px;
+}
+
+.job-form .form-group {
+    margin-bottom: 20px;
+}
+
+.job-form .form-control {
+    transition: var(--transition);
+}
+
+.job-form .form-control:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.1);
+}
+
+.job-form .form-control[readonly] {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    color: var(--text-light);
+    cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .supervisor-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .supervisor-content {
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .profile-section, .job-section {
+        margin-bottom: 20px;
+    }
+    
+    .section-title {
+        font-size: 20px;
+    }
+    
+    .profile-avatar {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .profile-avatar i {
+        font-size: 40px;
+    }
+}
